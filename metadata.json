@@ -1,0 +1,6 @@
+{
+  "name": "HungCube - Speedcubing Timer",
+  "description": "Premium, responsive speedcubing timer with WCA scrambles, CFOP algorithm library, 3D cube visualizer, and advanced solve analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

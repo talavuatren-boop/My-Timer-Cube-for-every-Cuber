@@ -1,0 +1,176 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-display: 'Chakra Petch', sans-serif;
+    --font-sans: 'Inter', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+}
+
+.font-mono-timer {
+  font-family: var(--font-mono);
+  font-feature-settings: "tnum" 1, "zero" 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Prevent unwanted zoom and callouts on mobile touch */
+.touch-timer-surface {
+  touch-action: manipulation;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* =========================================================
+   LIGHT THEME (THEME TRẮNG) STYLES
+   ========================================================= */
+.theme-light {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+.theme-light [class*="bg-neutral-950"],
+.theme-light [class*="bg-black"] {
+  background-color: #ffffff !important;
+}
+
+.theme-light [class*="bg-neutral-900"],
+.theme-light [class*="bg-neutral-850"] {
+  background-color: #f1f5f9 !important;
+}
+
+.theme-light [class*="bg-neutral-800"] {
+  background-color: #e2e8f0 !important;
+}
+
+.theme-light [class*="bg-neutral-950/"],
+.theme-light [class*="bg-neutral-900/"] {
+  background-color: rgba(241, 245, 249, 0.85) !important;
+}
+
+.theme-light [class*="bg-neutral-800/"] {
+  background-color: rgba(226, 232, 240, 0.8) !important;
+}
+
+.theme-light [class*="border-neutral-800"],
+.theme-light [class*="border-neutral-700"],
+.theme-light [class*="border-neutral-900"] {
+  border-color: #cbd5e1 !important;
+}
+
+.theme-light .text-neutral-100,
+.theme-light .text-white {
+  color: #0f172a !important;
+}
+
+.theme-light .text-neutral-200 {
+  color: #1e293b !important;
+}
+
+.theme-light .text-neutral-300 {
+  color: #334155 !important;
+}
+
+.theme-light .text-neutral-400 {
+  color: #64748b !important;
+}
+
+.theme-light .text-neutral-500 {
+  color: #94a3b8 !important;
+}
+
+.theme-light input,
+.theme-light select,
+.theme-light textarea {
+  color: #0f172a !important;
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+}
+
+.theme-light input::placeholder,
+.theme-light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+.theme-light .bg-black\/60,
+.theme-light .bg-black\/70,
+.theme-light .bg-black\/80 {
+  background-color: rgba(15, 23, 42, 0.45) !important;
+}
+
+.theme-light ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.18) !important;
+}
+
+.theme-light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.32) !important;
+}
+
+/* =========================================================
+   LANDSCAPE & RESPONSIVE DEVICE OPTIMIZATIONS (IPAD, PC, PHONE)
+   ========================================================= */
+@media (orientation: landscape) and (max-height: 540px) {
+  .landscape-compact-py {
+    padding-top: 0.2rem !important;
+    padding-bottom: 0.2rem !important;
+  }
+  .landscape-hide-mobile {
+    display: none !important;
+  }
+  .landscape-compact-timer {
+    font-size: clamp(3.5rem, 12vh, 5.5rem) !important;
+  }
+}
+
+/* iPad, Laptop & PC responsive layout helpers */
+@media (min-width: 768px) {
+  .tablet-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .desktop-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .wide-pc-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+}
